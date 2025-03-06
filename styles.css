@@ -96,15 +96,15 @@ canvas {
     position: fixed;
     top: 0;
     left: 0;
-    width: 1vw;
-    height: 1vh;
+    width: 100vw;
+    height: 100vh;
     z-index: -2;
 }
 
 /* Стили для body и html */
 body, html {
-    height: 100%;
-    width: 100%;
+    height: 70%;
+    width: 70%;
     font-family: 'Montserrat', sans-serif;
     background: #0f0f0f;
     color: #ffffff;
