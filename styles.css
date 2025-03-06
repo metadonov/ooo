@@ -1,0 +1,457 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#openModal {
+    background-color: #ff3333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(255, 51, 51, 0.3);
+}
+
+#openModal:hover {
+    background-color: #ff6666;
+    transform: scale(1.1);
+}
+
+
+.modal {
+    display: none; /* Скрываем по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный тёмный фон */
+    z-index: 10; /* Поверх всего остального */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #0f0f0f;
+    color: #000;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 700px;
+    width: 90%;
+    text-align: left;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Кнопка закрытия */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #ff4d4d;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+a.skill {
+    color: white;
+    text-decoration: none;
+}
+
+.link {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+
+
+
+canvas {
+    display: center;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+}
+
+/* Стили для body и html */
+body, html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    background: #0f0f0f;
+    color: #ffffff;
+    display: flex;
+    justify-content: flex-start; /* На мобильных устройствах выравнивание по верхнему краю */
+    align-items: flex-start; /* На мобильных устройствах выравнивание по верхнему краю */
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden; /* Разрешаем скроллинг только по вертикали */
+    scroll-behavior: smooth; /* Плавная прокрутка */
+}
+
+/* Стили для контейнера */
+.container {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    width: 95%;
+    max-width: 800px;
+    text-align: center;
+    z-index: 1;
+    animation: fadeIn 1.5s ease-in-out;
+    margin-top: 20px; /* Отступ сверху */
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Центрирование контента на больших экранах */
+@media (min-width: 769px) {
+    body, html {
+        justify-content: center; /* Центрирование по вертикали */
+        align-items: center; /* Центрирование по горизонтали */
+    }
+    
+    .container {
+        margin-top: 0; /* Убираем верхний отступ */
+    }
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none; /* Скрываем по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный тёмный фон */
+    z-index: 10; /* Поверх всего остального */
+    justify-content: center;
+    align-items: center;
+}
+
+
+h1 {
+    font-size: 2.5rem;
+    color: #ff4d4d;
+    margin-bottom: 15px;
+}
+
+.profile-photo {
+    margin-bottom: 20px;
+}
+
+.profile-photo img,
+.profile-photo video {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #ff4d4d;
+    transition: transform 0.3s ease-in-out;
+    object-fit: cover; /* Чтобы видео заполняло круг */
+}
+
+.profile-photo img:hover,
+.profile-photo video:hover {
+    transform: scale(1.1);
+}
+
+.bio, .skills {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #ff6666;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill {
+    background-color: #ff3333;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 51, 51, 0.3);
+}
+
+.skill:hover {
+    background-color: #ff6666;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    color: #ddd;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+}
+
+.footer p {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+.footer a {
+    color: #ff4d4d;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ff6666;
+}
+
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .skill {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    .audio-player {
+        flex-direction: column; /* Расположить элементы плеера в колонку */
+        align-items: center; /* Выравнивание по центру */
+        gap: 15px; /* Увеличить промежутки между элементами */
+    }
+
+    .control-btn {
+        width: 50px; /* Уменьшить размер кнопки Play/Pause */
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .progress-wrapper {
+        width: 100%; /* Прогресс-бар растягивается на весь экран */
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .progress-bar {
+        height: 4px; /* Сделать прогресс-бар чуть тоньше */
+    }
+
+    .time-display {
+        font-size: 0.8rem; /* Уменьшить размер шрифта для времени */
+    }
+
+    .volume-wrapper {
+        width: 100%; /* Растягиваем громкость по ширине */
+        display: flex;
+        justify-content: center; /* Центрируем элементы громкости */
+        gap: 10px;
+    }
+
+    .volume-control {
+        width: 80%; /* Увеличиваем длину ползунка громкости */
+        height: 4px; /* Делаем его более тонким */
+    }
+
+    .volume-icon {
+        font-size: 1rem; /* Уменьшаем размер иконки громкости */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+    .skill {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    .audio-player {
+        padding: 10px; /* Уменьшить отступы */
+        gap: 10px; /* Уменьшить промежутки между элементами */
+    }
+
+    .control-btn {
+        width: 40px; /* Ещё меньше для компактности */
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .progress-wrapper {
+        gap: 5px; /* Минимизируем промежутки */
+    }
+
+    .volume-wrapper {
+        flex-direction: column; /* Расположить громкость вертикально */
+        gap: 8px; /* Добавить расстояние между иконкой и ползунком */
+    }
+
+    .volume-control {
+        width: 100%; /* Ползунок громкости занимает всю ширину */
+    }
+
+    .time-display {
+        font-size: 0.7rem; /* Ещё меньше текст для маленьких экранов */
+    }
+}
+
+.audio-player {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    border-radius: 20px;
+    padding: 15px 20px;
+    max-width: 700px;
+    margin: 20px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.control-btn {
+    background: #ff4d4d;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(255, 77, 77, 0.4);
+}
+
+.control-btn:hover {
+    background: #ff6666;
+    transform: scale(1.1);
+}
+
+.progress-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 6px;
+    appearance: none;
+    background: #444;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #ff4d4d;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.time-display {
+    font-size: 0.9rem;
+    color: #ccc;
+    width: 40px;
+    text-align: center;
+}
+
+.volume-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.volume-control {
+    width: 100px;
+    height: 6px;
+    appearance: none;
+    background: #444;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.volume-control::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #ff4d4d;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#volumeIcon {
+    font-size: 1.2rem;
+    color: #fff;
+}
