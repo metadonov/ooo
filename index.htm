@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>predmet dev</title>
+  <link href="css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="stylesheet" href="3.7.2/plyr.css">
+  <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(99754913, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+    });
+    </script>
+    <noscript><div><img src="watch/99754913" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <script src="3.7.2/plyr.polyfilled.js"></script>
+  <link href="ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <canvas class="glslCanvas"></canvas>
+
+    <div class="container">
+        <h1>predmetdev(h1guro)</h1>
+
+        <div class="profile-photo">
+            <video autoplay="" loop="" muted="" playsinline="" class="profile-video">
+                <source src="imgs/ava.mov" type="video/mp4">
+                Ваш браузер не поддерживает видео тег.
+            </video>
+        </div>
+        
+        <div class="bio">
+            <h2>Обо мне</h2>
+            <p>Junior программист, 15 лет, занимаю, работаю на Python, изучаю Java.</p>
+            <p>Занимаюсь Back-end программированием.</p>
+        </div>
+
+        <div class="skills">
+            <h2>Навыки</h2>
+            <div class="skills-list" id="skills-list">
+                <span class="skill">Python</span>
+                <span class="skill">HTML & CSS</span>
+                <span class="skill">SQL</span>
+            </div>
+        </div>
+
+        <div class="skills">
+            <h2>Ссылки</h2>
+            <div class="skills-list" id="skills-list">
+                <a href="tg://resolve?domain=h1gurodev" class="skill" target="_blank">Telegram</a>
+                <a href="https://vk.com/predmetpon" class="skill" target="_blank">VK</a>
+                <a href="https://t.me/h1blog" class="skill" target="_blank">Блог</a>
+                <a href="https://www.youtube.com/@predmethvh" class="skill" target="_blank">YT</a>
+                <button id="openModal" class="skill">Проекты</button>
+            </div>
+        </div>
+        
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <h1>Проекты</h1>
+                <h2>AutoFarmer dota2</h2>
+                <p>Автоматический фармер 100 часов Dota2</p>
+                <p>ЯП: Python.</p>
+                <h2>Bio-Page</h2>
+                <p>Био-сайт для любых целей</p>
+                <h2>Сервер DarkHVH (Minecraft)</h2>
+                <p>Сервер в майнкрафте по тематике HVH (Hack vs Hack)</p>
+                <p>ЯП: Java, PHP+CSS, SQL</p>
+                <h2>Сервер GoldHVH (Minecraft)</h2>
+                <p>Сервер в майнкрафте по тематике HVH (Hack vs Hack)</p>
+                <p>ЯП: Java, SQL</p>
+                <h2>FunPay AutoSell TG</h2>
+                <p>Бот для автоматической продажи телеграм аккаунтов на funpay</p>
+                <p>ЯП: Python, SQL</p>
+                <h2>Referral Bot</h2>
+                <p>Телеграм бот который оплачивает приглашения друзей в бота</p>
+                <p>ЯП: Java, SQL</p>
+            </div>
+        </div>
+        
+            <div style="height: 30px;"></div> <!-- Spacer -->
+
+            <div class="audio-player">
+                <button id="playPauseButton" class="control-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <div class="progress-wrapper">
+                    <span id="currentTime" class="time-display">0:00</span>
+                    <input type="range" id="progressBar" class="progress-bar" value="0" max="100">
+                    <span id="durationTime" class="time-display">0:00</span>
+                </div>
+                <div class="volume-wrapper">
+                    <i id="volumeIcon" class="fas fa-volume-up"></i>
+                    <input type="range" id="volumeControl" class="volume-control" value="100" max="100">
+                </div>
+            </div>
+            <audio id="audioPlayer" src="assets/marlinmonro.mp3"></audio>
+            
+                   
+        </div>
+    
+
+    <div class="footer">
+        <p>© 2025 predmetdev. Все права защищены.</p>
+        <p>Связь: <a href="https://t.me/h1gurodev">t.me/h1gurodev</a></p>
+    </div>
+    
+
+    <script src="music.js"></script>
+</body>
+</html>
