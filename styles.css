@@ -103,8 +103,8 @@ canvas {
 
 /* Стили для body и html */
 body, html {
-    height: 70%;
-    width: 70%;
+    height: 100%;
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
     background: #0f0f0f;
     color: #ffffff;
