@@ -96,8 +96,8 @@ canvas {
     position: fixed;
     top: 0;
     left: 0;
-    width: 70vw;
-    height: 70vh;
+    width: 1vw;
+    height: 1vh;
     z-index: -2;
 }
 
