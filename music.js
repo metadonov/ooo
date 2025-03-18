@@ -6,14 +6,12 @@ const currentTimeDisplay = document.getElementById("currentTime");
 const durationTimeDisplay = document.getElementById("durationTime");
 const volumeIcon = document.getElementById("volumeIcon");
 
-// Форматируем время в MM:SS
 function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${minutes}:${secs < 10 ? "0" + secs : secs}`;
 }
 
-// Обновляем кнопки Play/Pause
 playPauseButton.addEventListener("click", () => {
     if (audioPlayer.paused) {
         audioPlayer.play();
@@ -24,7 +22,6 @@ playPauseButton.addEventListener("click", () => {
     }
 });
 
-// Обновляем прогресс-бар
 audioPlayer.addEventListener("timeupdate", () => {
     if (audioPlayer.duration) {
         progressBar.value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
@@ -32,46 +29,39 @@ audioPlayer.addEventListener("timeupdate", () => {
     }
 });
 
-// Изменяем время через прогресс-бар
 progressBar.addEventListener("input", () => {
     if (audioPlayer.duration) {
         audioPlayer.currentTime = (progressBar.value / 100) * audioPlayer.duration;
     }
 });
 
-// Устанавливаем общее время трека
 audioPlayer.addEventListener("loadedmetadata", () => {
     durationTimeDisplay.textContent = formatTime(audioPlayer.duration);
 });
 
-// Управляем громкостью
 volumeControl.addEventListener("input", () => {
     audioPlayer.volume = volumeControl.value / 100;
     volumeIcon.className = audioPlayer.volume === 0 ? "fas fa-volume-mute" : "fas fa-volume-up";
 });
 
-// Обновляем кнопку после завершения трека
 audioPlayer.addEventListener("ended", () => {
     playPauseButton.innerHTML = `<i class="fas fa-play"></i>`;
 });
 
 
-// Получаем элементы
 const openModal = document.getElementById('openModal');
 const closeModal = document.getElementById('closeModal');
 const modal = document.getElementById('modal');
 
-// Открытие модального окна
 openModal.addEventListener('click', () => {
-    modal.style.display = 'flex'; // Делаем модальное окно видимым
+    modal.style.display = 'flex';
 });
 
-// Закрытие модального окна
 closeModal.addEventListener('click', () => {
-    modal.style.display = 'none'; // Скрываем модальное окно
+    modal.style.display = 'none'; 
 });
 
-// Закрытие модального окна при клике вне его
+
 window.addEventListener('click', (event) => {
     if (event.target === modal) {
         modal.style.display = 'none';
